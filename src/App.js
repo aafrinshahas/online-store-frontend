@@ -8,6 +8,8 @@ import { productData } from "./api/Api";
 import Product from "./components/Product";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import Search from "./components/Search";
+
 
 const Layout = () => {
   return(

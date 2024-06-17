@@ -1,0 +1,1 @@
+export const baseUrl = 'https://online-store-backend-svs8.onrender.com'

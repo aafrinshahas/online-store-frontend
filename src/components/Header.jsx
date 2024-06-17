@@ -6,11 +6,13 @@ function Header(){
   console.log(userInfo)
   console.log(productData)
     return(
-        <div className="header flex items-center justify-between text-[#022b41] border border-b-[#022b41] sticky top-0 z-50 p-5 bg-slate-50">
+        <div className="header flex items-center justify-between text-[#022b41] sticky top-0 z-50 p-5 bg-white shadow-md shadow-slate-800">
         <div className="logo text-4xl">
           <Link to='/'><p className=" font-semibold">UrbanBazaar</p></Link>
         </div>
+  
         <div className="menu flex items-center gap-6  font-semibold">
+          
           {/* <Link to='/'><p className="text-xl">Home</p></Link>
           <Link to='/store'><p className="text-xl">Store</p></Link>
           <Link to='/contact'><p className="text-xl">Contact</p></Link> */}

@@ -17,35 +17,36 @@ setDetails(location.state.item)
 }, [])
     return(
         <div>
-              <div className="max-w-screen-xl mx-auto my-10 flex gap-10">
-            <div className="w-2/5 relative border">
+              <div className="m-10 flex flex-wrap gap-12 items-center">
+            <div className="single-product-image relative border flex-grow">
             <div>
-                  <img src={details.image} alt="productImg" className="w-full h-[550px] object-cover"></img>
+                  <img src={details.image} alt="productImg" className="img object-contain p-3"></img>
                   </div>
                   <div className=" absolute top-4 right-0">
                 {
                     details.isNew && (
-                        <p className="bg-black text-white font-semibold px-6 py-1">Sale</p>
+                        <p className="bg-[#022b41] text-white font-semibold px-6 py-1">Sale</p>
                     )
                 }
             </div>
             </div>
-                  <div className="w-3/5 flex flex-col justify-center gap-5">
+                  <div className="single-product-info flex-grow">
                       <div>
-                        <h2 className="text-4xl font-semibold">{details.title}</h2>
-                        <div className="flex items-center gap-4 mt-3 text-xl">
+                        <h2 className="text-4xl font-semibold text-[#022b41] pb-2">{details.title}</h2>
+                        <div className="flex items-center gap-4 mt-3 text-xl pb-2">
                         <p className="line-through text-gray-500">₹{details.oldPrice}</p>
                         <p className="font-semibold">₹{details.price}</p>
                         </div>
                       </div>
-                      <div className="ratings">
+                      <div className="ratings pb-2">
                         <div className="rating-outer">
-                            <div className="rating-inner" style={{width: `${details.rating/5 * 100}%`}}></div>
+                            <div className="rating-inner" style={{width: `${details.ratings/5 * 100}%`}}></div>
                         </div>
                       </div>
-                    <p className="text-base text-gray-500 mt-3">{details.description}</p>
+                      <p className="text-[#022b41] text-lg font-semibold pb-2">Description</p>
+                    <p className="text-base text-gray-500 pb-4">{details.description}</p>
                     <div className="flex gap-8">
-                        <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
+                        <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3 mb-4">
                             <p className="text-sm">Quantity</p>
                             <div className="flex items-center gap-4 text-sm font-semibold">
                             <button onClick={()=>setBaseQty(baseQty === 1? baseQty=1: baseQty-1)} className="border h-5 font-normal text-lg flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black">-</button>
@@ -67,10 +68,11 @@ setDetails(location.state.item)
                         ) & toast.success(`${details.title} is added`)
                         
                         }
-                            className="bg-black text-white px-6 py-3 active:bg-gray-800">add to cart</button>
+                            className="bg-[#022b41] text-white px-6 py-3 active:bg-gray-800 font-semibold">Add to Cart</button>
                         </div>
                     </div>
-                    <p className="capitalize text-sm">Category: <span>{details.category}</span></p>
+                    <p className="capitalize text-sm pb-2"><span className="text-[#022b41]">Category:</span> {details.category}</p>
+                    <p className="capitalize text-sm"><span className="text-[#022b41]">Seller:</span> {details.seller}</p>
                   </div>
               </div>
               <ToastContainer
